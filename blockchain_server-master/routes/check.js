@@ -100,42 +100,11 @@ router.post('/third/query/check', function (req, res, next) {
         if(doc != null){
             console.log("application info ------------------ ");
             console.log(JSON.stringify(doc));
-            // 第三方查看病历不需要走区块链了。。。
-            // BC.verify({"patientId": doc.patientId, "patientAgree": doc.patientVerifyCode, "hospitalId": doc.hospitalId, "hospitalAgree": doc.hospitalVerifyCode}, function (err, result) {
-            //     console.log(" verify on bc")
-            // });
+
             BC.queryCoreData({"id" : doc.coreDataId}, function (err, result) {
                 console.log("query data position on bc");
             });
-            // patient + 100
-            VerifyCode.findOne({"username": doc.patientId}, function (err, ver) {
-                if(ver != null && ver.balance != null){
-                    VerifyCode.update({"username": doc.patientId}, {$set: {"balance": ver.balance + 100}}, function (err, up) {
-                        if(err == null){
-                            console.log("/**************** patient + 100 *******************/");
-                        }
-                    });
-                } else {
-                    console.log("app balance is null");
-                }
-            });
-            // patient - 100
-            VerifyCode.findOne({"username": doc.applicationId}, function (err, ver) {
-                if(ver != null && ver.balance != null){
-                    VerifyCode.update({"username": doc.applicationId}, {$set: {"balance": ver.balance - 100}}, function (err, up) {
-                        if(err == null){
-                            console.log("/**************** applicationId - 100 *******************/");
-                        }
-                    })
-                } else {
-                    console.log("app balance is null");
-                }
-            });
-            BC.transBalance({"from": doc.applicationID, "to": doc.patientId}, function (err, re) {
-                if(err == null){
-                    console.log("/**************** BC transfer 100 *******************/");
-                }
-            });
+
             CoreData.findOne({"_id": doc.coreDataId, "patientId": doc.patientId}, function (err, core) {
                 res.json(core);
             });
@@ -152,6 +121,38 @@ router.post('/third/query/check', function (req, res, next) {
 router.post('/patient/verify', function(req, res, next) {
     LocalModel.findByIdAndUpdate(req.body._id, {$set:{patientAgree: req.body.agree, patientVerifyCode: req.body.verifyCode}},function(err,doc){
         console.log(doc); //MDragon
+        // 在病人第一次授权时转账
+        if(doc.patientAgree != "1"){
+            // patient + 100
+            VerifyCode.findOne({"username": doc.patientId}, function (err, ver) {
+                if(ver != null && ver.balance != null){
+                    VerifyCode.update({"username": doc.patientId}, {$set: {"balance": ver.balance + 100}}, function (err, up) {
+                        if(err == null){
+                            console.log("/**************** patient + 100 *******************/");
+                        }
+                    });
+                } else {
+                    console.log("app balance is null");
+                }
+            });
+            // applicator - 100
+            VerifyCode.findOne({"username": doc.applicationId}, function (err, ver) {
+                if(ver != null && ver.balance != null){
+                    VerifyCode.update({"username": doc.applicationId}, {$set: {"balance": ver.balance - 100}}, function (err, up) {
+                        if(err == null){
+                            console.log("/**************** applicationId - 100 *******************/");
+                        }
+                    })
+                } else {
+                    console.log("app balance is null");
+                }
+            });
+            BC.transBalance({"from": doc.applicationID, "to": doc.patientId}, function (err, re) {
+                if(err == null){
+                    console.log("/**************** BC transfer 100 *******************/");
+                }
+            });
+        }
         res.json(doc);
     });
 });
