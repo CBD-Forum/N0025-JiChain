@@ -1,4 +1,4 @@
-﻿
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -149,14 +149,16 @@
             		jsonLength++;
             	if(data[o].patientAgree=="1" && data[o].hospitalAgree=="1"){
                 $('<br>申请单号:<span id="_id'+o+'">'+data[o]._id+'</span><br>申请结果：同意查看</hr>').appendTo("#searchResult");
-            	}else if(data[o].hospitalAgree=="3"){
-            		$('<br>申请单号:<span id="_id'+o+'">'+data[o]._id+'</span><br>申请结果：正在申请中</hr>').appendTo("#searchResult");
-            	}else if(data[o].hospitalAgree=="2"){
-            		$('<br>申请单号:<span id="_id'+o+'">'+data[o]._id+'</span><br>申请结果：医院拒绝 最终结果：拒绝</hr>').appendTo("#searchResult");
             	}else if(data[o].patientAgree=="2" && data[o].hospitalAgree=="1"){
             		$('<br>申请单号:<span id="_id'+o+'">'+data[o]._id+'</span><br>申请结果：患者拒绝 最终结果：拒绝</hr>').appendTo("#searchResult")
+            	}else if(data[o].patientAgree=="3" && data[o].hospitalAgree=="1"){
+            		$('<br>申请单号:<span id="_id'+o+'">'+data[o]._id+'</span><br>申请结果：医院已通过，患者未处理</hr>').appendTo("#searchResult")
+            	}else if(data[o].hospitalAgree=="3"){
+            		$('<br>申请单号:<span id="_id'+o+'">'+data[o]._id+'</span><br>申请结果：医院未处理</hr>').appendTo("#searchResult");
+            	}else if(data[o].hospitalAgree=="2"){
+            		$('<br>申请单号:<span id="_id'+o+'">'+data[o]._id+'</span><br>申请结果：医院拒绝 最终结果：拒绝</hr>').appendTo("#searchResult");
             	}else if(data[o].patientAgree=="3" && data[o].hospitalAgree=="3"){
-            		$('<br>申请单号:<span id="_id'+o+'">'+data[o]._id+'</span><br>申请结果：正在申请中</hr>').appendTo("#searchResult")
+            		$('<br>申请单号:<span id="_id'+o+'">'+data[o]._id+'</span><br>申请结果：医院已通过，患者未处理</hr>').appendTo("#searchResult")
             	}
             }
             if(jsonLength==0){
