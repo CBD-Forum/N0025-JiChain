@@ -1,0 +1,315 @@
+﻿
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>用户中心</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Template by FREEHTML5" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+	
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'> -->
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- Superfish -->
+	<link rel="stylesheet" href="css/superfish.css">
+
+	<link rel="stylesheet" href="css/style.css">
+
+
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	</head>
+	<body>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">修改密码</h4>
+      </div>
+      <div class="modal-body">
+  <!--下面是密码输入框-->
+  <div class="input-group col-md-offset-3 col-md-6 col-sm-12">
+   <span class="input-group-addon" id="basic-addon1">@</span>
+   <input id="userPhone" type="password" maxlength="11" class="form-control" placeholder="原密码……" aria-describedby="basic-addon1">
+  </div>
+  </br>
+  <div class="input-group col-md-offset-3 col-md-6 col-sm-12">
+   <span class="input-group-addon" id="basic-addon1">@</span>
+   <input id="userPassword" type="password" class="form-control" placeholder="新密码……" aria-describedby="basic-addon1">
+  </div> 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">修改</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal2 -->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">新授权码为：</h4>
+      </div>
+      <div class="modal-body">
+  <!--新授权码框-->
+  <div class="input-group col-md-offset-3 col-md-6 col-sm-12">
+   <span class="input-group-addon" id="basic-addon1">@</span>
+   <input id="newverifyCode" type="text" maxlength="11" class="form-control" placeholder="请输入新的授权码……" aria-describedby="basic-addon1">
+  </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="changeverifyCode()" data-dismiss="modal">确定</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/Modal2-->
+
+<!-- Modal3 -->
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">资金流水为：</h4>
+      </div>
+      <div class="modal-body">
+  <!--新授权码框-->
+  <div class="input-group col-md-offset-3 col-md-6 col-sm-12">
+   <span class="input-group-addon" id="basic-addon1">2016/5/18</span>
+   <input id="userPhone" type="text" maxlength="11" class="form-control" placeholder="+2.0元" aria-describedby="basic-addon1" readonly>
+  </div>
+  <br>
+  <div class="input-group col-md-offset-3 col-md-6 col-sm-12">
+   <span class="input-group-addon" id="basic-addon1">2015/9/26</span>
+   <input id="userPhone" type="text" maxlength="11" class="form-control" placeholder="-50.00元" aria-describedby="basic-addon1" readonly>
+  </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/Modal3-->
+<!-- log_out modal -->
+<div class="modal fade" id="myModalout" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+  <!--下面是退出提示框-->
+  <div class="col-md-offset-3 col-md-6 col-sm-12">
+  <span class="input-group-addon" id="basic-addon1">您已成功退出！</span>
+   <span> </span>
+   <br>
+   <br>
+  </div> 
+      </div>
+    </div>
+  </div>
+</div>
+<!--/log_out modal-->
+
+		<div id="fh5co-wrapper">
+		<div id="fh5co-page">
+		<div id="fh5co-header">
+			<header id="fh5co-header-section" class="head-overlay">
+				<div class="container">
+					<div class="nav-header">
+						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a><h4 id="fh5co-logo"><a href="index.html">医疗区块链<span class="glyphicon glyphicon-cloud-download"></span></a></h4>
+						<!-- START #fh5co-menu-wrap -->
+						<nav id="fh5co-menu-wrap" role="navigation">
+							<ul class="sf-menu" id="fh5co-primary-menu">
+								<li>
+									<a href="index.html">主页</i></a>
+								</li>
+								
+								<li><a href="about.html">关于平台</a></li>
+								<li><a href="patientAuthorec.html">功能中心</a></li>
+								<li class="active"><a href="#">个人中心</a>
+								  <ul class="fh5co-sub-menu"><li><a data-toggle="modal" data-target="#myModalout" onclick="login_out()">退出</a></li></ul>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</header>		
+		</div>	
+		<!-- fh5co-content-section开始看 -->
+		<div id="fh5co-services-section">
+		    <div class="container block1"><p>W</p></div>
+		    <div class="container"><h4>你好！<i class="glyphicon glyphicon-user"></i><b><span id="username"></span></b></h4></div>
+			<div class="container" id="checkMRec">
+				<div class="row">
+				 <div class="col-md-8 col-md-offset-2 heading-section animate-box">
+			     <hr>
+						<div class="row"><h4 class="pull-left">当前授权码：</h4></div>
+						<div class="row">
+				 			<div class="col-md-9 col-xs-9">
+								<span id="verifyCode">29837783</span>
+							</div>
+
+
+							<div class="col-md-3 col-xs-3">
+								<button class="btn btn-default pull-right block" data-toggle="modal" data-target="#myModal2">更新</button>
+							</div>
+						</div>	
+						<hr><div class="row"><h4 class="pull-left">账户余额：</h4></div>
+						<div class="row">
+				 			<div class="col-md-9 col-xs-9">
+								<span id="balance"></span>
+							</div>
+						</div>	
+						<hr>
+						<div class="row">
+					<div class="row">
+				 			<div class="col-md-8 col-xs-8">
+								<span>密码管理：</span>
+							</div>
+							<div class="col-md-4 col-xs-4">
+								<button id="changepasswordbtn" class="btn btn-default pull-right block" data-toggle="modal" data-target="#myModal">修改密码</button>
+							</div>
+						</div>	
+						</div>
+						<hr>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END fh5co-services-section -->		
+		<!-- fh5co-blog-section -->
+		<footer>
+			<div id="footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3 text-center">
+							<p>Medical Blockchain<a href="about.html" title="关于我们">About us</a></br>医疗区块链@copyright 2017/05/14</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	
+
+	</div>
+	<!-- END fh5co-page -->
+
+	</div>
+	<!-- END fh5co-wrapper -->
+
+	<!-- jQuery -->
+
+
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Stellar -->
+	<script src="js/jquery.stellar.min.js"></script>
+	<!-- Superfish -->
+	<script src="js/hoverIntent.js"></script>
+	<script src="js/superfish.js"></script>
+
+	<!-- Main JS -->
+	<script src="js/main.js"></script>
+    <script>
+     var name = getCookie("name"); 
+    $("#username").html(name);
+     var role=getCookie("role");
+    function getCookie(objName){//获取指定名称的cookie的值   
+    var arrStr = document.cookie.split("; ");   
+	    for (var i = 0; i < arrStr.length; i++) {   
+	        var temp = arrStr[i].split("=");   
+	        if (temp[0] == objName)   
+	            return unescape(temp[1]);   
+	    }   
+   } 
+           var postBody = {
+            username: name            
+            };
+        $.ajax({
+            type: 'POST',
+            url: 'http://localhost:3389/users/getverifycode',
+            data: postBody,
+            dataType: 'json',
+            success: function(data){        
+            	console.log(data._id+'\t'+"余额："+data.balance);
+            	$("#balance").html(data.balance);
+            	$("#verifyCode").html(data.verifyCode);
+            }
+        }).error(function(err){
+            console.log(err);
+            alert("错误："+err.responseText);
+        });
+        /**
+        *修改授权码
+        **/
+    function changeverifyCode(){
+    	//alert(name);
+    	//alert($("#newverifyCode").val());
+    	var postBody = {
+            username: name,
+            verifyCode:$("#newverifyCode").val()         
+            };
+                $.ajax({
+            type: 'POST',
+            url: 'http://localhost:3389/users/changeverifycode',
+            data: postBody,
+            dataType: 'json',
+            success: function(data){   
+            	$("#newverifyCode").val()    
+            	console.log(data._id+'\t'+"余额："+data.balance);
+            	$("#balance").html(data.balance);
+            	$("#verifyCode").html($("#newverifyCode").val());
+            }
+        }).error(function(err){
+            console.log(err);
+            alert("错误："+err.responseText);
+        });
+    }
+    function login_out(){
+    	delCookie(getCookie("name"));
+    	setTimeout("window.location.href='login.html'",1000);
+    }
+    function delCookie(name){//为了删除指定名称的cookie，可以将其过期时间设定为一个过去的时间   
+    var date = new Date();   
+    date.setTime(date.getTime() - 10000);   
+    document.cookie = name + "=a; expires=" + date.toGMTString();   
+}   
+</script>
+	</body>
+</html>
+

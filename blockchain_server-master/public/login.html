@@ -1,0 +1,291 @@
+﻿
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>注册登陆</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Template by FREEHTML5" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+	
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'> -->
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- Superfish -->
+	<link rel="stylesheet" href="css/superfish.css">
+
+	<link rel="stylesheet" href="css/style.css">
+
+
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+  <style>
+    .underline{text-decoration:underline;}
+  </style>
+	</head>
+	<body>
+		<div id="fh5co-wrapper">
+		<div id="fh5co-page">
+		<div id="fh5co-header">
+			<header id="fh5co-header-section" class="head-overlay">
+				<div class="container">
+					<div class="nav-header">
+						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+						<h4 id="fh5co-logo"><a href="index.html">医疗区块链<span class="glyphicon glyphicon-cloud-download"></span></a></h4>
+						<!-- START #fh5co-menu-wrap -->
+						<nav id="fh5co-menu-wrap" role="navigation">
+							<ul class="sf-menu" id="fh5co-primary-menu">
+								<li>
+									<a href="index.html">主页</i></a>
+								</li>
+								<li><a href="about.html">关于我们</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</header>		
+		</div>	
+		<!-- fh5co-content-section开始看 -->
+		<div id="fh5co-services-section">
+		    <div class="container block1"><p>W</p></div>
+                 <ul class="pager">
+                  <li><a id="login_link" class="underline">登陆</a></li>
+				  <li><a id="enroll_link">注册</a></li>
+                 </ul>
+  				<div class="row">
+					<div class="col-md-8 col-md-offset-2 heading-section animate-box">
+ <!--下面是登陆页面-->
+ <form id="login_form" action="" method="post">
+  <!--下面是用户名输入框-->
+  <div class="input-group col-md-offset-3 col-md-6 col-sm-12">
+   <span class="input-group-addon" id="basic-addon1">@</span>
+   <input id="login_username" type="text" maxlength="11" class="form-control" placeholder="用户名……" aria-describedby="basic-addon1">
+  </div>
+  <br>
+  <!--下面是密码输入框-->
+  <div class="input-group col-md-offset-3 col-md-6 col-sm-12">
+    <span class="input-group-addon" id="basic-addon1">@</span>
+    <input id="login_password" type="password" class="form-control" placeholder="密码……" aria-describedby="basic-addon1">
+  </div>
+    <!--选择角色-->
+    <div class="col-md-offset-4 col-md-6 col-sm-12">
+  <label class="checkbox-inline">
+    <input type="radio" name="login_role" value="1" checked> 用户
+  </label>
+  <label class="checkbox-inline">
+    <input type="radio" name="login_role" value="2"> 医院
+  </label>
+  <label class="checkbox-inline">
+    <input type="radio" name="login_role" value="3"> 机构
+  </label>
+  </div>
+  <br>
+  <!--下面是登陆按钮,包括颜色控制-->
+  <div class="col-md-offset-4 col-md-4 col-sm-12">
+   <button type="button" class="btn btn-default btn-block" onclick="login_fun()">登陆</button>
+  </div>
+ </form>
+ <!--下面是注册页面-->
+ <form id="enroll_form" method="post">
+ <!--下面是用户名输入框-->
+  <div class="input-group col-md-offset-3 col-md-6 col-sm-12">
+   <span class="input-group-addon" id="basic-addon1">@</span>
+   <input id="register_username" type="text" class="form-control" placeholder="用户名……" aria-describedby="basic-addon1">
+  </div>
+  <br>
+  <div class="input-group col-md-offset-3 col-md-6 col-sm-12">
+   <span class="input-group-addon" id="basic-addon1">@</span>
+   <input id="register_password" type="password" class="form-control" placeholder="密码……" aria-describedby="basic-addon1">
+  </div> 
+    <!--选择角色-->
+    <div class="col-md-offset-4 col-md-6 col-sm-12">
+  <label class="checkbox-inline">
+    <input type="radio" name="register_role" value="1" checked>用户
+  </label>
+  <label class="checkbox-inline">
+    <input type="radio" name="register_role" value="2"> 医院
+  </label>
+  <label class="checkbox-inline">
+    <input type="radio" name="register_role" value="3"> 机构
+  </label>
+  </div>
+  <br>
+  <div class="col-md-offset-4 col-md-4 col-sm-12">
+   <button type="button" class="btn btn-default btn-block" onclick="register_fun()">注册</button>
+  </div>
+ </form>
+ 					</div>
+				</div>
+		</div>
+		<!-- END fh5co-services-section -->		
+		<!-- fh5co-blog-section -->
+		<div id="footer">
+    <div class="container">
+     <div class="row">
+      <div class="col-md-6 col-md-offset-3 text-center">
+       <p>Medical Blockchain<a href="about.html" title="关于我们">About us</a ></br>医疗区块链@copyright 2017/05/14</p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </footer>
+	
+
+	</div>
+	<!-- END fh5co-page -->
+
+	</div>
+	<!-- END fh5co-wrapper -->
+
+	<!-- jQuery -->
+
+
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Stellar -->
+	<script src="js/jquery.stellar.min.js"></script>
+	<!-- Superfish -->
+	<script src="js/hoverIntent.js"></script>
+	<script src="js/superfish.js"></script>
+
+	<!-- Main JS -->
+	<script src="js/main.js"></script>
+    <script>
+    $(document).ready(function(){
+      $("a#showCheckMRec1").click(function(){
+                             $("#checkMRec1").toggle();
+      });
+      $("a#showCheckMRec2").click(function(){
+                             $("#checkMRec2").toggle();
+      });
+     $("#enroll_link").click(function(){
+      $("#enroll_form").show();
+      $("#login_form").hide();
+      $(this).addClass("underline");
+      $("#login_link").removeClass("underline");
+     });
+     $("#login_link").click(function(){
+      $("#enroll_form").hide();
+      $("#login_form").show();
+      $(this).addClass("underline");
+      $("#enroll_link").removeClass("underline");
+     });	  
+	});
+	    function register_fun(){
+        var verifyCode="000000";
+        var balance=0;
+        if($('input[name="register_role"]:checked').val()=="3"){
+          balance=1000;
+        }else{
+          balance=1000;
+        }
+        var postBody = {
+            username: $('#register_username').val(),
+            password: $('#register_password').val(),
+            role: $('input[name="register_role"]:checked').val(),
+            balance:balance,
+            verifyCode:verifyCode
+        };
+        console.log(postBody.username + " " + postBody.password);
+        $.ajax({
+            type: 'POST',
+            url: 'http://localhost:3389/users/register',
+            data: postBody,
+            dataType: 'json',
+            success: function(data){
+                console.log(JSON.stringify(data));
+                alert("您已注册成功！");
+            }
+        }).error(function(err){
+            console.log(err);
+            alert(err.responseText);
+        });
+        console.log('register_fun');
+    }
+    function login_fun(){
+ 
+        var postBody = {
+            username: $('#login_username').val(),
+            password: $('#login_password').val(),
+            role: $('input[name="login_role"]:checked').val()
+        };
+        console.log(postBody.username + " " + postBody.password);
+        $.ajax({
+            type: 'POST',
+            url: 'http://localhost:3389/users/login',
+            data: postBody,
+            dataType: 'json',
+            success: function(data){        
+            var role=$('input[name="login_role"]:checked').val() ;  
+                var jsonstr=JSON.stringify(data);
+                console.log(jsonstr);
+            function addCookie(objName, objValue, objHours){//添加cookie   
+                var str = objName + "=" + escape(objValue);   
+                if (objHours > 0) {//为0时不设定过期时间，浏览器关闭时cookie自动消失   
+                    var date = new Date();   
+                    var ms = objHours * 3600 * 1000;   
+                    date.setTime(date.getTime() + ms);   
+                    str += "; expires=" + date.toGMTString();   
+                }   
+                document.cookie = str;
+            }   
+                 addCookie("name", postBody.username, 24); 
+                 addCookie("password", postBody.password, 24);
+                 // addCookie("record_id", data.data[0]._id, 24); 
+                 var str = document.cookie;
+                if(str==""){
+                 alert("请开启您浏览器cookie选项");
+                }else{
+                 if(role=="1"){
+                  addCookie("uname", postBody.username, 24); 
+                  addCookie("role", $('input[name="login_role"]:checked').val(), 24); 
+                  window.location.href="patienthandleRequest.html";
+                 }else if(role=="2"){
+                  addCookie("hname", postBody.username, 24); 
+                  addCookie("role", $('input[name="login_role"]:checked').val(), 24); 
+                  window.location.href="medicalhandleReq.html";
+                }else if(role=="3"){
+                  addCookie("tname", postBody.username, 24); 
+                  addCookie("role", $('input[name="login_role"]:checked').val(), 24); 
+                  window.location.href="analysisAgencySearch.html";
+                }else{
+                  alert("请选择角色");
+                }
+                }
+            }
+        }).error(function(err){
+            console.log(err);
+            alert("错误："+err.responseText);
+        });
+    }
+</script>
+	</body>
+</html>
+

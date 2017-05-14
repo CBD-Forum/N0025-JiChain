@@ -1,0 +1,241 @@
+﻿
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>医院授权</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Template by FREEHTML5" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+	
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'> -->
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- Superfish -->
+	<link rel="stylesheet" href="css/superfish.css">
+
+	<link rel="stylesheet" href="css/style.css">
+
+
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	</head>
+	<body>
+		<div id="fh5co-wrapper">
+		<div id="fh5co-page">
+		<div id="fh5co-header">
+			<header id="fh5co-header-section" class="head-overlay">
+				<div class="container">
+					<div class="nav-header">
+						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a><h4 id="fh5co-logo"><a href="index.html">医疗区块链<span class="glyphicon glyphicon-cloud-download"></span></a></h4>
+						<!-- START #fh5co-menu-wrap -->
+						<nav id="fh5co-menu-wrap" role="navigation">
+							<ul class="sf-menu" id="fh5co-primary-menu">
+								<li>
+									<a href="index.html">主页</i></a>
+								</li>
+								<li><a href="about.html">关于平台</a></li>
+								<li class="active"><a href="#">功能中心</a></li>
+								<li><a href="userCenter.html">个人中心</a>
+								  <ul class="fh5co-sub-menu"><li><a href="userCenter.html">个人信息</a></li><li><a href="#" target="_blank">退出</a></li></ul>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</header>		
+		</div>	
+		<!-- fh5co-content-section开始看 -->
+		<div id="fh5co-services-section">
+		    <div class="container block1"><p>W</p></div>
+			<div class="container"><h4>你好！<i class="gglyphicon glyphicon-heart"></i><b><span id="hname"></span></b></h4></div>
+			<script>
+                  document.write('<ul class="pager"><li><a href="medicalAencyPandect.html">病历总览</a></li><li><a style="color:#ffffff;background:#7ad88f" href="medicalhandleReq.html">授权处理</a></li><li><a href="medicalAuthrec.html">授权记录</a></li></ul>');
+                  </script>
+			<div class="container" id="checkMRec">
+				<div class="row">
+				 <div class="col-md-8 col-md-offset-2 heading-section animate-box">
+            <div id="searchResult">
+			</div>
+				</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		<!-- END fh5co-services-section -->		
+		<!-- fh5co-blog-section -->
+		<footer>
+			<div id="footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3 text-center">
+							<p>Medical Blockchain<a href="about.html" title="关于我们">About us</a></br>医疗区块链@copyright 2017/05/14</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	
+
+	</div>
+	<!-- END fh5co-page -->
+
+	</div>
+	<!-- END fh5co-wrapper -->
+
+	<!-- jQuery -->
+
+
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Stellar -->
+	<script src="js/jquery.stellar.min.js"></script>
+	<!-- Superfish -->
+	<script src="js/hoverIntent.js"></script>
+	<script src="js/superfish.js"></script>
+
+	<!-- Main JS -->
+	<script src="js/main.js"></script>
+    <script>
+    $(document).ready(function(){
+	    function getCookie(objName){//获取指定名称的cookie的值   
+	        var arrStr = document.cookie.split("; ");   
+	        for (var i = 0; i < arrStr.length; i++) {   
+	            var temp = arrStr[i].split("=");   
+	            if (temp[0] == objName)   
+	                return unescape(temp[1]);   
+	        }   
+	    }
+	    var hname=getCookie("hname");
+	    if(hname==""){
+	    	window.location.href="login.html";
+	    }
+	    $("#hname").html(hname);
+        var postBody = {
+            hospitalId: hname
+        };
+        $.ajax({
+        type: 'POST',
+        url: 'http://localhost:3389/check/hospital/query',
+        data: postBody,
+        dataType: 'json',
+        success: function(data){
+        	var i=0;
+            for(var o in data){  
+              console.log("成功请求："+JSON.stringify(data));
+              if(data[o].hospitalAgree=="3"){
+              	i++;
+              $('<br>申请单号:<span id="_ida'+o+'">'+data[o]._id+'</span><br>申请者Id：<span id="applicationId'+o+'">'+data[o].applicationId+'</span><br>患者Id：<span id="patientId'+o+'">'+data[o].patientId+'</span><br>病症：<span id="reason'+o+'">'+data[o].reason+'</span></br><ul id="pagera'+o+'" class="pager"><li><button class="btn btn-default btn-sm" id="a'+o+'" onclick="agree(this)">允许查看</button></li><li><button class="btn btn-default btn-sm" id="a'+o+'" onclick="reject(this)">拒绝查看</button></li></ul></hr>').appendTo("#searchResult");
+            }
+            }
+            if(i==0){
+              $("#searchResult").html("暂无需要处理的申请。");
+            }
+        }
+        }).error(function(err){
+            console.log(err);
+            alert(err.responseText);
+          });
+	});
+
+	function agree(obj){
+         var num=obj.id;
+         var pager='#pager'+num+'';
+        $(pager).replaceWith('<span class="pull-right" style="color:#7ad88f;">医院已同意 患者待处理</span><br><hr>');
+        var _rid="#_id"+num;
+        var postBody = {
+			_id:$(_rid).html(),
+			agree:"1"
+            };
+            console.log("申请单号："+$(_rid).html());
+        console.log(JSON.stringify(postBody));
+        $.ajax({
+            type: 'POST',
+            url: 'http://localhost:3389/check/hospital/verify',
+            data: postBody,
+            dataType: 'json',
+            success: function(data){  
+              alert("已同意请求！");
+            }
+         }).error(function(err){
+            console.log(err);
+            alert("服务器忙！请稍后再尝试");
+          });
+        $.ajax({
+            type: 'POST',
+            url: 'http://localhost:3389/check/hospital/verify',
+            data: postBody,
+            dataType: 'json',
+            success: function(data){    
+              console.log("data1 success"+JSON.stringify(data));
+          }
+         }).error(function(err){
+          }); 
+      }
+
+	function reject(obj){
+         var num=obj.id;
+         var pager='#pager'+num+'';
+        $(pager).replaceWith('<span class="pull-right" style="color:#7ad88f;">医院已拒绝</span><br><hr>');
+        var _rid="#_id"+num;
+        var hstr="#hospitalId"+num;
+        var postBody = {
+			_id:$(_rid).html(),
+			agree:"2"
+            };
+        console.log(JSON.stringify(postBody));
+        $.ajax({
+            type: 'POST',
+            url: 'http://localhost:3389/check/hospital/verify',
+            data: postBody,
+            dataType: 'json',
+            success: function(data){  
+              alert("已拒绝请求");
+            }
+         }).error(function(err){
+            console.log(err);
+            alert("服务器忙！请稍后再尝试");
+          });
+        $.ajax({
+            type: 'POST',
+            url: 'http://localhost:3389/check/hospital/verify',
+            data: postBody,
+            dataType: 'json',
+            success: function(data){    
+              console.log("data1 success reject"+JSON.stringify(data));
+          }
+         }).error(function(err){
+          }); 
+      }
+	</script>
+	</body>
+</html>
+
